@@ -1,17 +1,13 @@
 <template>
-  <div>
-    <h1>根组件</h1>
-  </div>
+  <div></div>
 </template>
 
-<script>
-let a = '111'
+<script setup lang="ts">
+import { onMounted } from 'vue'
+import { reqLogin } from './api/user'
+onMounted(() => {
+  reqLogin({ username: 'admin', password: '111111' })
+})
 </script>
 
-<style scoped lang="scss">
-div {
-  width: 100px;
-  height: 100px;
-  background-color: #333;
-}
-</style>
+<style scoped></style>
